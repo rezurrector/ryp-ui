@@ -5,7 +5,9 @@
   "main": "dist/index.cjs",
   "module": "dist/index.mjs",
   "types": "dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "exports": {
     ".": {
@@ -15,9 +17,9 @@
     }
   },
   "scripts": {
-    "dev": "vite",
-    "build": "tsup src/index.ts --format cjs,esm --dts",
-    "build:storybook": "storybook build",
+    "dev": "node init && vite",
+    "build": "node init && tsup src/index.ts --format cjs,esm --dts",
+    "build:storybook": "node init && storybook build",
     "lint": "eslint . --ext .ts,.tsx",
     "lint:fix": "eslint . --ext .ts,.tsx --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,css}\"",
@@ -80,7 +82,10 @@
   },
   "pnpm": {
     "peerDependencyRules": {
-      "ignoreMissing": ["@types/react", "@types/react-dom"]
+      "ignoreMissing": [
+        "@types/react",
+        "@types/react-dom"
+      ]
     }
   },
   "packageManager": "pnpm@9.0.0",
